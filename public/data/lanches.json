@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "DevBurger Clássico",
+    "descricao": "Hambúrguer de carne bovina, queijo cheddar, alface, tomate, cebola roxa e molho especial DevBurger.",
+    "preco": "R$ 25.00"
+  },
+  {
+    "id": 2,
+    "nome": "Code Chicken",
+    "descricao": "Filé de frango grelhado, queijo provolone, bacon crocante, maionese de ervas e rúcula.",
+    "preco": "R$ 22.00"
+  },
+  {
+    "id": 3,
+    "nome": "Veggie Loop",
+    "descricao": "Hambúrguer de grão de bico, queijo vegano, brotos, tomate seco e molho pesto.",
+    "preco": "R$ 28.00"
+  },
+  {
+    "id": 4,
+    "nome": "Bug Bacon",
+    "descricao": "Hambúrguer de carne bovina, queijo suíço, muito bacon, cebola caramelizada e molho barbecue.",
+    "preco": "R$ 27.00"
+  }
+]

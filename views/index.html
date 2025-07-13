@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBurger - Cardápio</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Cardápio</a>
+        <a href="/contato">Sugestões</a>
+        <a href="/api/cardapio" target="_blank">Ver API Cardápio</a>
+    </nav>
+    <div class="container">
+        <h1>Bem-vindo ao DevBurger!</h1>
+        <h2>Nosso Cardápio</h2>
+        <div id="cardapio-container">
+            <p>Carregando cardápio...</p>
+        </div>
+        <p>Experimente nossos lanches gourmet!</p>
+    </div>
+
+    <footer>
+        &copy; 2025 DevBurger. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        // Exemplo de como carregar o cardápio via JavaScript (fetch da API)
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/api/cardapio')
+                .then(response => response.json())
+                .then(data => {
+                    const cardapioContainer = document.getElementById('cardapio-container');
+                    cardapioContainer.innerHTML = ''; // Limpa o "Carregando..."
+                    data.forEach(lanche => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add('menu-item');
+                        itemDiv.innerHTML = `
+                            <h3>${lanche.nome}</h3>
+                            <p>${lanche.descricao}</p>
+                            <p><strong>Preço:</strong> ${lanche.preco}</p>
+                        `;
+                        cardapioContainer.appendChild(itemDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar o cardápio:', error);
+                    document.getElementById('cardapio-container').innerHTML = '<p>Não foi possível carregar o cardápio no momento. Tente novamente mais tarde.</p>';
+                });
+        });
+    </script>
+</body>
+</html>
